@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SqlConnector
 {
@@ -23,13 +24,22 @@ namespace SqlConnector
         //path of data base
         string path = "data_table.db";
         string cs = @"URI=file:" + Application.StartupPath + "\\data_table.db"; //database creat debug folder
-
         SQLiteConnection con;
         SQLiteCommand cmd;
         SQLiteDataReader dr;
 
         private void data_show()
         {
+
+
+
+            cbbDBtype.DisplayMember = "Text";
+            cbbDBtype.ValueMember = "Value";
+
+            cbbDBtype.Items.Add(new { Text = "Mssql", Value = "Mssql" });
+            cbbDBtype.Items.Add(new { Text = "Oracle", Value = "Oracle" });
+
+
             var con = new SQLiteConnection(cs);
             con.Open();
 
@@ -64,6 +74,14 @@ namespace SqlConnector
             }
         }
 
+        private void AddConnection_Load(object sender, EventArgs e)
+        {
+            Create_db();
+            data_show();
+        }
+
+
+
         private void Insert_btn_Click(object sender, EventArgs e)
         {
             var con = new SQLiteConnection(cs);
@@ -76,7 +94,7 @@ namespace SqlConnector
 
                 string DBname = txtDBname.Text;
                 string ConnStr = txtConnStr.Text;
-                string DBtype = txtConnStr.Text;
+                string DBtype = cbbDBtype.Text;
 
                 cmd.Parameters.AddWithValue("@DBname", DBname);
                 cmd.Parameters.AddWithValue("@ConnStr", ConnStr);
@@ -96,6 +114,29 @@ namespace SqlConnector
             catch (Exception)
             {
                 Console.WriteLine("cannot insert data");
+                return;
+            }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            var con = new SQLiteConnection(cs);
+            con.Open();
+            var cmd = new SQLiteCommand(con);
+            string cellValue = Convert.ToString(dataGridView1.SelectedRows[0].Cells["DBname"].Value);
+ 
+            try
+            {
+                cmd.CommandText = "DELETE FROM DBconnection where DBname =@DBname";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@DBname", cellValue);
+                cmd.ExecuteNonQuery();
+                dataGridView1.Rows.Clear();
+                data_show();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("cannot delete data");
                 return;
             }
         }

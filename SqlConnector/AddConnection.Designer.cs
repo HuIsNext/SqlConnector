@@ -37,7 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Insert_btn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DBname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConnStr = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,14 +123,15 @@
             this.Insert_btn.UseVisualStyleBackColor = true;
             this.Insert_btn.Click += new System.EventHandler(this.Insert_btn_Click);
             // 
-            // button4
+            // delete_btn
             // 
-            this.button4.Location = new System.Drawing.Point(176, 397);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(250, 29);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
+            this.delete_btn.Location = new System.Drawing.Point(176, 397);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(250, 29);
+            this.delete_btn.TabIndex = 10;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // dataGridView1
             // 
@@ -183,7 +184,7 @@
             this.ClientSize = new System.Drawing.Size(1009, 450);
             this.Controls.Add(this.cbbDBtype);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.Insert_btn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -195,6 +196,7 @@
             this.Controls.Add(this.txtDBname);
             this.Name = "AddConnection";
             this.Text = "AddConnection";
+            this.Load += new System.EventHandler(this.AddConnection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,7 +214,7 @@
         private Button button1;
         private Button button2;
         private Button Insert_btn;
-        private Button button4;
+        private Button delete_btn;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn DBname;
         private DataGridViewTextBoxColumn ConnStr;
