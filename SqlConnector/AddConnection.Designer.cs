@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDBname = new System.Windows.Forms.TextBox();
+            this.txtConnStr = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Insert_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DBname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConnStr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DBtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxDBtype = new System.Windows.Forms.ComboBox();
+            this.cbbDBtype = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtDBname
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 27);
-            this.textBox1.TabIndex = 0;
+            this.txtDBname.Location = new System.Drawing.Point(176, 39);
+            this.txtDBname.Name = "txtDBname";
+            this.txtDBname.Size = new System.Drawing.Size(250, 27);
+            this.txtDBname.TabIndex = 0;
             // 
-            // textBox2
+            // txtConnStr
             // 
-            this.textBox2.Location = new System.Drawing.Point(176, 106);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 27);
-            this.textBox2.TabIndex = 1;
+            this.txtConnStr.Location = new System.Drawing.Point(176, 106);
+            this.txtConnStr.Name = "txtConnStr";
+            this.txtConnStr.Size = new System.Drawing.Size(250, 27);
+            this.txtConnStr.TabIndex = 1;
             // 
             // label1
             // 
@@ -113,14 +113,15 @@
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Insert_btn
             // 
-            this.button3.Location = new System.Drawing.Point(176, 294);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 29);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Insert";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Insert_btn.Location = new System.Drawing.Point(176, 294);
+            this.Insert_btn.Name = "Insert_btn";
+            this.Insert_btn.Size = new System.Drawing.Size(250, 29);
+            this.Insert_btn.TabIndex = 9;
+            this.Insert_btn.Text = "Insert";
+            this.Insert_btn.UseVisualStyleBackColor = true;
+            this.Insert_btn.Click += new System.EventHandler(this.Insert_btn_Click);
             // 
             // button4
             // 
@@ -166,33 +167,32 @@
             this.DBtype.Name = "DBtype";
             this.DBtype.Width = 125;
             // 
-            // comboBoxDBtype
+            // cbbDBtype
             // 
-            this.comboBoxDBtype.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxDBtype.FormattingEnabled = true;
-            this.comboBoxDBtype.Location = new System.Drawing.Point(176, 176);
-            this.comboBoxDBtype.Name = "comboBoxDBtype";
-            this.comboBoxDBtype.Size = new System.Drawing.Size(250, 27);
-            this.comboBoxDBtype.TabIndex = 12;
-            
+            this.cbbDBtype.ForeColor = System.Drawing.Color.Black;
+            this.cbbDBtype.FormattingEnabled = true;
+            this.cbbDBtype.Location = new System.Drawing.Point(176, 176);
+            this.cbbDBtype.Name = "cbbDBtype";
+            this.cbbDBtype.Size = new System.Drawing.Size(250, 27);
+            this.cbbDBtype.TabIndex = 12;
             // 
             // AddConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 450);
-            this.Controls.Add(this.comboBoxDBtype);
+            this.Controls.Add(this.cbbDBtype);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Insert_btn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtConnStr);
+            this.Controls.Add(this.txtDBname);
             this.Name = "AddConnection";
             this.Text = "AddConnection";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -203,20 +203,20 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtDBname;
+        private TextBox txtConnStr;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Button button1;
         private Button button2;
-        private Button button3;
+        private Button Insert_btn;
         private Button button4;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn DBname;
         private DataGridViewTextBoxColumn ConnStr;
         private DataGridViewTextBoxColumn DBtype;
-        private ComboBox comboBoxDBtype;
+        private ComboBox cbbDBtype;
     }
 }
