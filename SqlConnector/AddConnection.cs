@@ -123,30 +123,33 @@ namespace SqlConnector
             con.Open();
             var cmd = new SQLiteCommand(con);
             string cellValue = Convert.ToString(dataGridView1.SelectedRows[0].Cells["DBname"].Value);
- 
-            try
+            if (dataGridView1.CurrentRow.Index == dataGridView1.Rows.Count - 1)
             {
-                cmd.CommandText = "DELETE FROM DBconnection where DBname =@DBname";
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@DBname", cellValue);
-                cmd.ExecuteNonQuery();
-                dataGridView1.Rows.Clear();
-                data_show();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("cannot delete data");
-                return;
+                try
+                {
+                    cmd.CommandText = "DELETE FROM DBconnection where DBname =@DBname";
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@DBname", cellValue);
+                    cmd.ExecuteNonQuery();
+                    dataGridView1.Rows.Clear();
+                    data_show();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("cannot delete data");
+                    return;
+                }
             }
         }
 
         private void btnTestConn_Click(object sender, EventArgs e)
         {
-            //string ConnectionString = Convert.ToString(dataGridView1.SelectedRows[0].Cells["ConnStr"].Value);
-            string ConnectionString = "Server = MSI; Database = Northwind; User ID = 'Test123'; Password = 'Abc12345678'";
+
+
+            //string ConnectionString = "Server = MSI; Database = Northwind; User ID = 'Test123'; Password = 'Abc12345678'";
             try
             {
-
+                string ConnectionString = Convert.ToString(dataGridView1.SelectedRows[0].Cells["ConnStr"].Value);
                 using (var connection = new SqlConnection(ConnectionString))
                 {
                     var query = "select 1";
@@ -155,15 +158,15 @@ namespace SqlConnector
                     var command = new SqlCommand(query, connection);
 
                     connection.Open();
-                    Console.WriteLine("SQL Connection successful.");
-
+                    MessageBox.Show("SQL 連線成功.");
                     command.ExecuteScalar();
-                    Console.WriteLine("SQL Query execution successful.");
+                    MessageBox.Show("SQL 執行測試成功.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Failure: {0}", ex.Message);
+                string ErrorMsg = "Failure:" + ex.Message.ToString();
+                MessageBox.Show(ErrorMsg);
             }
         }
     }
