@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
@@ -30,9 +32,6 @@ namespace SqlConnector
 
         private void data_show()
         {
-
-
-
             cbbDBtype.DisplayMember = "Text";
             cbbDBtype.ValueMember = "Value";
 
@@ -138,6 +137,33 @@ namespace SqlConnector
             {
                 Console.WriteLine("cannot delete data");
                 return;
+            }
+        }
+
+        private void btnTestConn_Click(object sender, EventArgs e)
+        {
+            //string ConnectionString = Convert.ToString(dataGridView1.SelectedRows[0].Cells["ConnStr"].Value);
+            string ConnectionString = "Server = MSI; Database = Northwind; User ID = 'Test123'; Password = 'Abc12345678'";
+            try
+            {
+
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    var query = "select 1";
+                    Console.WriteLine("Executing: {0}", query);
+
+                    var command = new SqlCommand(query, connection);
+
+                    connection.Open();
+                    Console.WriteLine("SQL Connection successful.");
+
+                    command.ExecuteScalar();
+                    Console.WriteLine("SQL Query execution successful.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failure: {0}", ex.Message);
             }
         }
     }

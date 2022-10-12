@@ -34,8 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTestConn = new System.Windows.Forms.Button();
             this.Insert_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -95,23 +94,15 @@
             this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 6;
             // 
-            // button1
+            // btnTestConn
             // 
-            this.button1.Location = new System.Drawing.Point(176, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "測試連線";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(176, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 29);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTestConn.Location = new System.Drawing.Point(780, 397);
+            this.btnTestConn.Name = "btnTestConn";
+            this.btnTestConn.Size = new System.Drawing.Size(250, 29);
+            this.btnTestConn.TabIndex = 7;
+            this.btnTestConn.Text = "測試連線";
+            this.btnTestConn.UseVisualStyleBackColor = true;
+            this.btnTestConn.Click += new System.EventHandler(this.btnTestConn_Click);
             // 
             // Insert_btn
             // 
@@ -125,7 +116,7 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(176, 397);
+            this.delete_btn.Location = new System.Drawing.Point(176, 347);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(250, 29);
             this.delete_btn.TabIndex = 10;
@@ -144,7 +135,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(501, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(549, 337);
             this.dataGridView1.TabIndex = 11;
             // 
             // DBname
@@ -181,13 +172,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 450);
+            this.ClientSize = new System.Drawing.Size(1042, 452);
             this.Controls.Add(this.cbbDBtype);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.Insert_btn);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTestConn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -211,8 +201,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button button1;
-        private Button button2;
+        private Button btnTestConn;
         private Button Insert_btn;
         private Button delete_btn;
         private DataGridView dataGridView1;
