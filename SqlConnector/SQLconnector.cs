@@ -1,6 +1,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace SqlConnector
 {
@@ -51,14 +52,14 @@ namespace SqlConnector
                     da.Fill(ds, "database");
                     con.Close();
 
-                   foreach(DataRow item in ds.Tables[0].Rows)
+                    foreach (DataRow item in ds.Tables[0].Rows)
                     {
                         string a = item.ItemArray[0].ToString();
                         listBox1.Items.Add(a);
                     }
-                
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -87,5 +88,45 @@ namespace SqlConnector
             cbdata_show();
             dgvDBname_show();
         }
+
+        private void btnSqlCommand_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ds = new DataSet();
+                SqlConnection conn = null;
+                conn = new SqlConnection(cbbDBName.SelectedValue.ToString());
+                conn.Open();           
+                //var strSQLCommand = txtSqlcommand.Text;
+                //var command = new SqlCommand(strSQLCommand, conn);
+                //var ret = command.ExecuteScalar().ToString();
+                string[] strSQLCommands = txtSqlcommand.Text.Split(";").Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
+                foreach (string strSQLCommand in strSQLCommands)
+                {
+                    var dataAdapter = new SqlDataAdapter(strSQLCommand, conn);
+                    var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    dataAdapter.Fill(ds);
+                }
+
+                if (ds.Tables.Count != 0)
+                {
+                    dgvSqlCommand.ReadOnly = true;
+                    dgvSqlCommand.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("指令輸入完成");
+                }
+                conn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString(), "有回傳值顯示");
+            }
+        }
+
+
     }
 }
