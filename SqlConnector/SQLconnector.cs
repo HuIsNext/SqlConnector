@@ -1,6 +1,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SqlConnector
@@ -65,11 +66,6 @@ namespace SqlConnector
                 }
             }
         }
-
-
-
-
-
         private void 加入連線設定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddConnection AC = new AddConnection();
@@ -77,12 +73,6 @@ namespace SqlConnector
             AC.StartPosition = FormStartPosition.CenterScreen;
 
         }
-
-        private void cbbDBName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ;
-        }
-
         private void SQLconnector_Load(object sender, EventArgs e)
         {
             cbdata_show();
@@ -97,9 +87,6 @@ namespace SqlConnector
                 SqlConnection conn = null;
                 conn = new SqlConnection(cbbDBName.SelectedValue.ToString());
                 conn.Open();           
-                //var strSQLCommand = txtSqlcommand.Text;
-                //var command = new SqlCommand(strSQLCommand, conn);
-                //var ret = command.ExecuteScalar().ToString();
                 string[] strSQLCommands = txtSqlcommand.Text.Split(";").Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
                 foreach (string strSQLCommand in strSQLCommands)
@@ -123,10 +110,8 @@ namespace SqlConnector
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.ToString(), "有回傳值顯示");
+                MessageBox.Show(ex.ToString(), "CatchMessage");
             }
         }
-
-
     }
 }

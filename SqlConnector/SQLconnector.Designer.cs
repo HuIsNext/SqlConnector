@@ -49,7 +49,7 @@
             this.設定ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(983, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1183, 27);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,7 +74,6 @@
             this.cbbDBName.Name = "cbbDBName";
             this.cbbDBName.Size = new System.Drawing.Size(99, 27);
             this.cbbDBName.TabIndex = 2;
-            this.cbbDBName.SelectedIndexChanged += new System.EventHandler(this.cbbDBName_SelectedIndexChanged);
             // 
             // txtConnName
             // 
@@ -92,7 +91,7 @@
             this.dgvSqlCommand.Name = "dgvSqlCommand";
             this.dgvSqlCommand.RowHeadersWidth = 51;
             this.dgvSqlCommand.RowTemplate.Height = 29;
-            this.dgvSqlCommand.Size = new System.Drawing.Size(733, 260);
+            this.dgvSqlCommand.Size = new System.Drawing.Size(946, 384);
             this.dgvSqlCommand.TabIndex = 5;
             // 
             // listBox1
@@ -101,13 +100,13 @@
             this.listBox1.ItemHeight = 19;
             this.listBox1.Location = new System.Drawing.Point(13, 63);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(190, 365);
+            this.listBox1.Size = new System.Drawing.Size(190, 574);
             this.listBox1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(225, 305);
+            this.label1.Location = new System.Drawing.Point(214, 423);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 19);
             this.label1.TabIndex = 7;
@@ -115,15 +114,15 @@
             // 
             // txtSqlcommand
             // 
-            this.txtSqlcommand.Location = new System.Drawing.Point(303, 302);
+            this.txtSqlcommand.Location = new System.Drawing.Point(292, 420);
             this.txtSqlcommand.Name = "txtSqlcommand";
-            this.txtSqlcommand.Size = new System.Drawing.Size(655, 105);
+            this.txtSqlcommand.Size = new System.Drawing.Size(879, 173);
             this.txtSqlcommand.TabIndex = 9;
             this.txtSqlcommand.Text = "";
             // 
             // btnSqlCommand
             // 
-            this.btnSqlCommand.Location = new System.Drawing.Point(773, 420);
+            this.btnSqlCommand.Location = new System.Drawing.Point(986, 599);
             this.btnSqlCommand.Name = "btnSqlCommand";
             this.btnSqlCommand.Size = new System.Drawing.Size(185, 29);
             this.btnSqlCommand.TabIndex = 10;
@@ -135,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 461);
+            this.ClientSize = new System.Drawing.Size(1183, 640);
             this.Controls.Add(this.btnSqlCommand);
             this.Controls.Add(this.txtSqlcommand);
             this.Controls.Add(this.label1);
@@ -170,5 +169,6 @@
         private RichTextBox richTextBox1;
         private Button btnSqlCommand;
         private RichTextBox txtSqlcommand;
+        private Button btnStoreProcedure;
     }
 }
