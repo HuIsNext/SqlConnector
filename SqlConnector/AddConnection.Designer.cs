@@ -47,14 +47,14 @@
             // 
             // txtDBname
             // 
-            this.txtDBname.Location = new System.Drawing.Point(173, 38);
+            this.txtDBname.Location = new System.Drawing.Point(176, 39);
             this.txtDBname.Name = "txtDBname";
             this.txtDBname.Size = new System.Drawing.Size(250, 27);
             this.txtDBname.TabIndex = 0;
             // 
             // txtConnStr
             // 
-            this.txtConnStr.Location = new System.Drawing.Point(173, 105);
+            this.txtConnStr.Location = new System.Drawing.Point(176, 106);
             this.txtConnStr.Name = "txtConnStr";
             this.txtConnStr.Size = new System.Drawing.Size(250, 27);
             this.txtConnStr.TabIndex = 1;
@@ -62,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 38);
+            this.label1.Location = new System.Drawing.Point(33, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 19);
             this.label1.TabIndex = 3;
@@ -71,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 105);
+            this.label2.Location = new System.Drawing.Point(33, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 19);
             this.label2.TabIndex = 4;
@@ -80,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 175);
+            this.label3.Location = new System.Drawing.Point(33, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 19);
             this.label3.TabIndex = 5;
@@ -89,14 +89,14 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(372, 271);
+            this.label4.Location = new System.Drawing.Point(375, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 6;
             // 
             // btnTestConn
             // 
-            this.btnTestConn.Location = new System.Drawing.Point(777, 396);
+            this.btnTestConn.Location = new System.Drawing.Point(780, 397);
             this.btnTestConn.Name = "btnTestConn";
             this.btnTestConn.Size = new System.Drawing.Size(250, 29);
             this.btnTestConn.TabIndex = 7;
@@ -106,7 +106,7 @@
             // 
             // Insert_btn
             // 
-            this.Insert_btn.Location = new System.Drawing.Point(173, 293);
+            this.Insert_btn.Location = new System.Drawing.Point(176, 294);
             this.Insert_btn.Name = "Insert_btn";
             this.Insert_btn.Size = new System.Drawing.Size(250, 29);
             this.Insert_btn.TabIndex = 9;
@@ -116,7 +116,7 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(173, 346);
+            this.delete_btn.Location = new System.Drawing.Point(176, 347);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(250, 29);
             this.delete_btn.TabIndex = 10;
@@ -131,7 +131,7 @@
             this.DBname,
             this.ConnStr,
             this.DBtype});
-            this.dataGridView1.Location = new System.Drawing.Point(450, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(481, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
@@ -163,7 +163,7 @@
             // 
             this.cbbDBtype.ForeColor = System.Drawing.Color.Black;
             this.cbbDBtype.FormattingEnabled = true;
-            this.cbbDBtype.Location = new System.Drawing.Point(173, 175);
+            this.cbbDBtype.Location = new System.Drawing.Point(176, 176);
             this.cbbDBtype.Name = "cbbDBtype";
             this.cbbDBtype.Size = new System.Drawing.Size(250, 27);
             this.cbbDBtype.TabIndex = 12;
