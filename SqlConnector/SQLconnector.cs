@@ -113,5 +113,10 @@ namespace SqlConnector
                 MessageBox.Show(ex.ToString(), "CatchMessage");
             }
         }
+
+        private void cbbDBName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,8 +16,6 @@ namespace SqlConnector
 {
     public partial class AddConnection : Form
     {
-
-
         public AddConnection()
         {
             InitializeComponent();
@@ -144,8 +142,6 @@ namespace SqlConnector
 
         private void btnTestConn_Click(object sender, EventArgs e)
         {
-
-
             //string ConnectionString = "Server = MSI; Database = Northwind; User ID = 'Test123'; Password = 'Abc12345678'";
             try
             {

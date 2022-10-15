@@ -74,6 +74,7 @@
             this.cbbDBName.Name = "cbbDBName";
             this.cbbDBName.Size = new System.Drawing.Size(99, 27);
             this.cbbDBName.TabIndex = 2;
+            this.cbbDBName.SelectedIndexChanged += new System.EventHandler(this.cbbDBName_SelectedIndexChanged);
             // 
             // txtConnName
             // 
